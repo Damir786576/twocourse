@@ -1,7 +1,22 @@
 import pytest
-from src.category import Category, Product
 
-from tests.test_product import product_iphone, product_samsung, product_xiomi
+from src.category import Category
+from src.product import Product
+
+
+@pytest.fixture()
+def product_samsung():
+    return Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
+
+
+@pytest.fixture()
+def product_iphone():
+    return Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
+
+
+@pytest.fixture()
+def product_xiomi():
+    return Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
 
 
 @pytest.fixture()
@@ -43,4 +58,3 @@ def test_category_count(category1, category2):
 def test_product_count(category1, category2):
     assert category1.product_count == 3
     assert category2.product_count == 1
-
