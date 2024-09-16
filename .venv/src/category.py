@@ -37,3 +37,4 @@ if __name__ == '__main__':
     print(category1.products)
     print(category1.category_count)
     print(category1.product_count)
+

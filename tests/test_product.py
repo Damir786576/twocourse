@@ -36,3 +36,4 @@ def test_xiomi(product_xiomi):
     assert product_xiomi.description == "1024GB, Синий"
     assert product_xiomi.price == "31000.0 руб"
     assert product_xiomi.quantity == "14 шт"
+
