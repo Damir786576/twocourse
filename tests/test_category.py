@@ -58,3 +58,4 @@ def test_category_count(category1, category2):
 def test_product_count(category1, category2):
     assert category1.product_count == 3
     assert category2.product_count == 1
+
