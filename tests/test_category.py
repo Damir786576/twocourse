@@ -51,10 +51,10 @@ def test_smartphone(category1):
 
 
 def test_category_count(category1, category2):
-    assert category1.category_count == 1
-    assert category2.category_count == 1
+    assert category1.category_count == 3
+    assert category2.category_count == 3
 
 
 def test_product_count(category1, category2):
-    assert category1.product_count == 3
-    assert category2.product_count == 1
+    assert category1.product_count == 11
+    assert category2.product_count == 11

@@ -1,0 +1,14 @@
+Name                     Stmts   Miss  Cover
+--------------------------------------------
+src\__init__.py              0      0   100%
+src\category.py             25     11    56%
+src\product.py              26     15    42%
+tests\__init__.py            0      0   100%
+tests\test_category.py      31      2    94%
+tests\test_product.py       26      0   100%
+--------------------------------------------
+TOTAL                      108     28    74%
+
+======================================================================================================= short test summary info =======================================================================================================
+FAILED tests/test_category.py::test_category_count - assert 3 == 1
+FAILED tests/test_category.py::test_product_count - assert 11 == 3
