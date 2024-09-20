@@ -10,8 +10,8 @@ class Product:
         """Задаем значение атрибутам экземпляра"""
         self.name = name
         self.description = description
-        self.price = f"{price} руб"
-        self.quantity = f"{quantity} шт"
+        self.price = price
+        self.quantity = quantity
 
 
 if __name__ == "__main__":
