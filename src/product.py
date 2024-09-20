@@ -10,26 +10,41 @@ class Product:
         """Задаем значение атрибутам экземпляра"""
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
+
+    @classmethod
+    def new_product(cls, product_str):
+        name = product_str.get("name")
+        description = product_str.get("description")
+        price = product_str.get("price")
+        quantity = product_str.get("quantity")
+        return cls(name, description, price, quantity)
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, new_product):
+        if new_product <= 0:
+            print('Цена не должна быть нулевая или отрицательная')
+        else:
+            self.__price = new_product
 
 
 if __name__ == "__main__":
-    product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
-    product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
-    product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
+    product1 = {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
+                "quantity": 5}
+    product2 = {"name": "Iphone 15", "description": "512GB, Gray space", "price": 210000.0, "quantity": 8}
+    product3 = {"name": "Xiaomi Redmi Note 11", "description": "1024GB, Синий", "price": 31000.0, "quantity": 14}
 
-    print(product1.name)
-    print(product1.description)
-    print(product1.price)
-    print(product1.quantity)
+    product1 = Product.new_product(product1)
+    product2 = Product.new_product(product2)
+    product3 = Product.new_product(product3)
 
-    print(product2.name)
-    print(product2.description)
-    print(product2.price)
-    print(product2.quantity)
-
-    print(product3.name)
-    print(product3.description)
-    print(product3.price)
-    print(product3.quantity)
+    for product in [product1, product2, product3]:
+        print(product.name, end=',')
+        print(product.description, end=',')
+        print(product.price, end=',')
+        print(product.quantity, end='\n')

@@ -48,7 +48,6 @@ if __name__ == "__main__":
     category1.add_product(product2)
     category1.add_product(product3)
     category2.add_product(product4)
-
     print(category1.name)
     print(category1.description)
     print(category1.product_lists)
