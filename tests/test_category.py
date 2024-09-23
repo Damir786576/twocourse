@@ -28,11 +28,8 @@ def product_tv():
 def category1(product_samsung, product_iphone, product_xiomi):
     category = Category(
         "Смартфоны",
-        "Смартфоны, как средство не только коммуникации," " но и получения дополнительных функций для удобства жизни",
-    )
-    category.add_product(product_samsung)
-    category.add_product(product_iphone)
-    category.add_product(product_xiomi)
+        "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
+        [product_samsung, product_iphone, product_xiomi])
     return category
 
 
@@ -40,9 +37,8 @@ def category1(product_samsung, product_iphone, product_xiomi):
 def category2(product_tv):
     category = Category(
         "Телевизоры",
-        "Современный телевизор, " "который позволяет наслаждаться просмотром, станет вашим другом и помощником",
-    )
-    category.add_product(product_tv)
+        "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+        [product_tv])
     return category
 
 
