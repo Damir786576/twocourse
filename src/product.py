@@ -1,11 +1,5 @@
 class Product:
     """Класс для продукта"""
-
-    name: str
-    description: str
-    price: float
-    quantity: int
-
     def __init__(self, name, description, price, quantity):
         """Задаем значение атрибутам экземпляра"""
         self.name = name
