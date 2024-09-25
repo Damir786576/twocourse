@@ -46,6 +46,12 @@ def category2(product_tv):
     return category
 
 
+@pytest.fixture(autouse=True, scope="function")
+def reset_category_counters():
+    Category.product_count = 0
+    Category.category_count = 0
+
+
 def test_smartphone(category1):
     assert category1.name == "Смартфоны"
     assert category1.description == (
@@ -71,4 +77,4 @@ def test_add_product(category1, product_tv):
     print(f'fixture test_add_product category_count: {Category.category_count}')
     print(f'fixture test_add_product product_count: {Category.product_count}')
     assert len(category1.products.split('\n')) == 4
-    assert Category.product_count == 5
+    assert Category.product_count == 4
