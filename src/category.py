@@ -26,3 +26,7 @@ class Category:
     @property
     def products(self):
         return self.list_products
+
+    def __str__(self):
+        total = sum(product.quantity for product in self.__products)
+        return f'{self.name}, количество продуктов: {total} шт.'

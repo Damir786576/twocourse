@@ -42,3 +42,13 @@ def test_xiomi(product_xiomi):
 def test_price_change(product_samsung):
     product_samsung.price = 200000.0
     assert product_samsung.price == 200000.0
+
+
+def test_str(product_samsung):
+    assert str(product_samsung) == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт. "
+
+
+def test_add_products(product_samsung, product_iphone):
+    total_sum = product_samsung + product_iphone
+    assert total_sum == (product_samsung.price * product_samsung.quantity) + (product_iphone.price *
+                                                                              product_iphone.quantity)
