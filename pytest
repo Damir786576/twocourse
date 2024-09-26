@@ -10,7 +10,3 @@ tests\test_product.py       29      0   100%
 --------------------------------------------
 TOTAL                      148     32    78%
 
-===================================================================================================== short test summary info =====================================================================================================
-FAILED tests/test_category.py::test_category_count - assert 3 == 2
-FAILED tests/test_category.py::test_product_count - assert 11 == 4
-FAILED tests/test_category.py::test_add_product - assert 18 == 5

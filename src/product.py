@@ -1,5 +1,6 @@
 class Product:
     """Класс для продукта"""
+
     def __init__(self, name, description, price, quantity):
         """Задаем значение атрибутам экземпляра"""
         self.name = name
@@ -25,6 +26,13 @@ class Product:
             print('Цена не должна быть нулевая или отрицательная')
         else:
             self.__price = new_product
+
+    def __str__(self):
+        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт. '
+
+    def __add__(self, other):
+        total_sum = (self.price * self.quantity) + (other.price * other.quantity)
+        return total_sum
 
 
 if __name__ == "__main__":

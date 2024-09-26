@@ -78,3 +78,7 @@ def test_add_product(category1, product_tv):
     print(f'fixture test_add_product product_count: {Category.product_count}')
     assert len(category1.products.split('\n')) == 4
     assert Category.product_count == 4
+
+
+def test_str_representation(category1):
+    assert str(category1) == "Смартфоны, количество продуктов: 27 шт."
