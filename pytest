@@ -1,12 +1,12 @@
----------- coverage: platform win32, python 3.12.1-final-0 -----------
-Name                     Stmts   Miss  Cover
 --------------------------------------------
 src\__init__.py              0      0   100%
-src\category.py             38     15    61%
-src\product.py              37     17    54%
+src\category.py             25      0   100%
+src\product.py              38     17    55%
 tests\__init__.py            0      0   100%
-tests\test_category.py      44      0   100%
-tests\test_product.py       29      0   100%
+tests\test_category.py      51      0   100%
+tests\test_product.py       34      0   100%
 --------------------------------------------
-TOTAL                      148     32    78%
+TOTAL                      148     17    89%
+
+
 
