@@ -31,22 +31,25 @@ class Product:
         return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт. '
 
     def __add__(self, other):
-        total_sum = (self.price * self.quantity) + (other.price * other.quantity)
-        return total_sum
+        if isinstance(other, self.__class__):
+            total_sum = (self.price * self.quantity) + (other.price * other.quantity)
+            return total_sum
+
+        raise TypeError
 
 
-if __name__ == "__main__":
-    product1 = {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
-                "quantity": 5}
-    product2 = {"name": "Iphone 15", "description": "512GB, Gray space", "price": 210000.0, "quantity": 8}
-    product3 = {"name": "Xiaomi Redmi Note 11", "description": "1024GB, Синий", "price": 31000.0, "quantity": 14}
+class Smartphone(Product):
+    def __init__(self, name, description, price, quantity, efficiency, model, memory, color):
+        super().__init__(name, description, price, quantity)
+        self.efficiency = efficiency
+        self.model = model
+        self.memory = memory
+        self.color = color
 
-    product1 = Product.new_product(product1)
-    product2 = Product.new_product(product2)
-    product3 = Product.new_product(product3)
 
-    for product in [product1, product2, product3]:
-        print(product.name, end=',')
-        print(product.description, end=',')
-        print(product.price, end=',')
-        print(product.quantity, end='\n')
+class LawnGrass(Product):
+    def __init__(self, name, description, price, quantity, country, germination_period, color):
+        super().__init__(name, description, price, quantity)
+        self.country = country
+        self.germination_period = germination_period
+        self.color = color
