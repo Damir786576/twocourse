@@ -77,3 +77,12 @@ def test_smartphone_product():
     assert product_smartphone.model == "S23 Ultra"
     assert product_smartphone.memory == 256
     assert product_smartphone.color == "Gray"
+
+
+def test_new_product():
+    product_str = {"name": "New Product", "description": "New product description", "price": 1000.0, "quantity": 10}
+    new_product = Product.new_product(product_str)
+    assert new_product.name == "New Product"
+    assert new_product.description == "New product description"
+    assert new_product.price == 1000.0
+    assert new_product.quantity == 10
