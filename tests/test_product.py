@@ -1,6 +1,6 @@
 import pytest
 
-from src.product import Product
+from src.product import Product, Smartphone, LawnGrass
 
 
 @pytest.fixture()
@@ -52,3 +52,28 @@ def test_add_products(product_samsung, product_iphone):
     total_sum = product_samsung + product_iphone
     assert total_sum == (product_samsung.price * product_samsung.quantity) + (product_iphone.price *
                                                                               product_iphone.quantity)
+
+
+def test_lawngrass_product():
+    product_lawngrass = LawnGrass("LawnGrass", "Green grass", 500, 10, "USA", 7, "Green")
+    assert product_lawngrass.name == "LawnGrass"
+    assert product_lawngrass.description == "Green grass"
+    assert product_lawngrass.price == 500
+    assert product_lawngrass.quantity == 10
+    assert product_lawngrass.country == "USA"
+    assert product_lawngrass.germination_period == 7
+    assert product_lawngrass.color == "Green"
+
+
+def test_smartphone_product():
+    product_smartphone = Smartphone("Smartphone", "256GB, Серый цвет, 200MP камера", 180000.0, 5, "High", "S23 Ultra",
+                                    256,
+                                    "Gray")
+    assert product_smartphone.name == "Smartphone"
+    assert product_smartphone.description == "256GB, Серый цвет, 200MP камера"
+    assert product_smartphone.price == 180000.0
+    assert product_smartphone.quantity == 5
+    assert product_smartphone.efficiency == "High"
+    assert product_smartphone.model == "S23 Ultra"
+    assert product_smartphone.memory == 256
+    assert product_smartphone.color == "Gray"
