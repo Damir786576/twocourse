@@ -41,11 +41,12 @@ class BaseProduct(ABC):
 
 
 class Mixin:
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, *args, **kwargs) -> None:
+        print(repr(self))
 
     def __repr__(self):
-        return f"Объект класса {self.__class__.__name__}"
+        return (f"Объект класса {self.__class__.__name__}({self.name}, {self.description}, {self.price},"
+                f" {self.quantity})")
 
 
 class Product(BaseProduct, Mixin):
