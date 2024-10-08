@@ -82,3 +82,15 @@ def test_add_product(category1, product_tv):
 
 def test_str_representation(category1):
     assert str(category1) == "Смартфоны, количество продуктов: 27 шт."
+
+
+def test_middle_price_with_products():
+    category = Category("Category", "description",
+                        [Product("Phone", "A phone", 1000, 1),
+                         Product("Phone", "A phone", 2000, 1)])
+    assert category.middle_price() == 1500
+
+
+def test_middle_price_with_no_products():
+    category = Category("Test Category", "Test description", [])
+    assert category.middle_price() == 0

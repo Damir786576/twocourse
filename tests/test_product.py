@@ -86,3 +86,10 @@ def test_new_product():
     assert new_product.description == "New product description"
     assert new_product.price == 1000.0
     assert new_product.quantity == 10
+
+
+def test_quantity():
+    with pytest.raises(ValueError):
+        Product("Phone", "A phone", 1000, 0)
+    with pytest.raises(ValueError):
+        Product("Phone", "A phone", 1000, -1)
