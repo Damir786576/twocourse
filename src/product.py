@@ -6,6 +6,8 @@ class BaseProduct(ABC):
 
     @abstractmethod
     def __init__(self, name, description, price, quantity):
+        if quantity <= 0:
+            raise ValueError
         self.name = name
         self.description = description
         self.__price = price
